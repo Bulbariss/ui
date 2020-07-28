@@ -1,8 +1,8 @@
 {
   "name": "@bulbariss/ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ui",
   "license": "MIT",
-  "repository": "bulbariss/ui",
+  "repository": "Bulbariss/ui",
   "main": "index.js"
 }
