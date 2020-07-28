@@ -1,6 +1,6 @@
 {
   "name": "@bulbariss/ui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "ui",
   "license": "MIT",
   "repository": "Bulbariss/ui",
@@ -16,19 +16,26 @@
     "docs:build": "styleguidist build"
   },
   "peerDependencies": {
-    "react": "^16.x"
+    "react": "^16.x",
+    "styled-jsx": "^3.x",
+    "tailwindcss": "^1.x",
+    "gastby": "^1.x"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "gastby": "^1.0.1",
+    "gatsby-plugin-styled-jsx": "^3.3.11",
     "rollup": "^2.23.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.3",
-    "rollup-plugin-uglify": "^6.0.4"
+    "rollup-plugin-uglify": "^6.0.4",
+    "styled-jsx": "^3.3.0",
+    "tailwindcss": "^1.5.2"
   },
   "dependencies": {
     "babel-plugin-module-resolver": "^4.0.0"
