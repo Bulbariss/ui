@@ -1,11 +1,36 @@
 {
   "name": "@bulbariss/ui",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ui",
   "license": "MIT",
   "repository": "Bulbariss/ui",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "/lib"
+  ],
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c",
+    "prepublishOnly": "rm -rf lib && npm run build",
+    "postbuild": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
+    "docs:build": "styleguidist build"
+  },
   "peerDependencies": {
     "react": "^16.x"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "rollup": "^2.23.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-uglify": "^6.0.4"
+  },
+  "dependencies": {
+    "babel-plugin-module-resolver": "^4.0.0"
   }
 }
