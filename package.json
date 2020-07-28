@@ -1,0 +1,8 @@
+{
+  "name": "@bulbariss/ui",
+  "version": "1.0.0",
+  "description": "ui",
+  "license": "MIT",
+  "repository": "bulbariss/ui",
+  "main": "index.js"
+}
