@@ -1,8 +1,11 @@
 {
   "name": "@bulbariss/ui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ui",
   "license": "MIT",
   "repository": "Bulbariss/ui",
-  "main": "index.js"
+  "main": "index.js",
+  "peerDependencies": {
+    "react": "^16.x"
+  }
 }
