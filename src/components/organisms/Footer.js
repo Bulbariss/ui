@@ -1,5 +1,5 @@
 import React from "react";
-import CookieButtons from "./atoms/CookieButtons";
+import CookieButtons from "../molecules/CookieButtons";
 
 function Footer() {
   return (

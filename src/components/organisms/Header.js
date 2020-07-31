@@ -1,5 +1,5 @@
 import React from "react";
-import ThemeToggle from "./atoms/ThemeToggle";
+import ThemeToggle from "../atoms/ThemeToggle";
 import { Link } from "gatsby";
 
 function Header() {

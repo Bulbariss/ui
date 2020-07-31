@@ -5,7 +5,7 @@ import {
   handleAllowCookies,
   googleAnalytics,
 } from "../utils/CookieUtils";
-import Button from "./Button";
+import Button from "../atoms/Button";
 
 function CookieBanner({ isVisible }) {
   let [visibility, setVisibility] = useState();

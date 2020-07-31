@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import CookieBanner from "./cookieBanner";
+import CookieBanner from "../organisms/cookieBanner";
 import { getCookie } from "../utils/CookieUtils";
 
 function CookieButtons({ classes }) {

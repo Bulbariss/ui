@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { selectOptions } from "./SelectOptions";
-import Arrow from "./arrow.svg";
+import Arrow from "./Arrow.js";
 
 const Select = (props, ref) => {
   return (

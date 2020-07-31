@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from "react";
-import useIntersect from "../../utils/useIntersect";
 
-function MoovingLetters({ text, className, triggerOnce = true }) {
+function MoovingLetters({ text, className, delay = 1000, inView }) {
   let charPosition = useRef(-1);
   let iteration = useRef(0);
   let letters = useRef(text.replace(/\s/g, ""));
@@ -10,12 +9,9 @@ function MoovingLetters({ text, className, triggerOnce = true }) {
   const textWrapper = useRef(null);
   const requestRef = useRef(null);
   const wasTriggered = useRef(false);
-  const [ref, entry] = useIntersect({
-    threshold: 0,
-  });
 
   function splitText(str) {
-    return str.replace(/\w+[!"#$%&'()*+,\-./:;<=>?@[\\\]^_‘{|}~]?/g, splitting);
+    return str.replace(/\S+/g, splitting);
   }
 
   function splitting(match) {
@@ -62,31 +58,30 @@ function MoovingLetters({ text, className, triggerOnce = true }) {
   useEffect(() => {
     textWrapper.current.innerHTML = splitText(text);
     getGlitchesMatrix();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (entry.isIntersecting && (!wasTriggered.current || !triggerOnce)) {
+    if (inView) {
       wasTriggered.current = true;
       setTimeout(() => {
         requestRef.current = requestAnimationFrame(changeClassNames);
-      }, 1500);
+      }, delay);
     }
 
     return () => cancelAnimationFrame(requestRef.current);
-  }, [entry.isIntersecting]);
-
-  function handleOnClick() {
-    iteration.current = 0;
-    charPosition.current = -1;
-    requestRef.current = requestAnimationFrame(changeClassNames);
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView]);
 
   return (
-    <div ref={ref}>
-      <div ref={textWrapper} className={className} id="mooving-letters"></div>
-      <button onClick={() => handleOnClick()}>test</button>
-      <style jsx>{`
-        #mooving-letters .word {
+    <div
+      aria-label={text}
+      ref={textWrapper}
+      className={className}
+      id="mooving-letters"
+    >
+      <style global jsx>{`
+        #mooving-letters > .word {
           position: relative;
           display: inline-block;
         }
@@ -99,7 +94,7 @@ function MoovingLetters({ text, className, triggerOnce = true }) {
 
         #mooving-letters span.sym-0,
         #mooving-letters-invisible span.sym-0 {
-          color: #333;
+          color: rgba(var(--color-dark), 1);
         }
 
         #mooving-letters span.char::after,
@@ -107,7 +102,7 @@ function MoovingLetters({ text, className, triggerOnce = true }) {
           position: absolute;
           left: 0;
           top: -15%;
-          color: #333;
+          color: rgba(var(--color-dark), 1);
           visibility: visible;
         }
 
@@ -159,7 +154,7 @@ function MoovingLetters({ text, className, triggerOnce = true }) {
           content: "å";
         }
 
-        #mooving-letters span.sym-12::after {
+        #mooving-letters span span.sym-12::after {
           content: "ß";
         }
 
