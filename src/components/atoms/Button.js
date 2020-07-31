@@ -8,8 +8,9 @@ const buttonStyles = css`
   .classic {
     border-radius: 5px;
   }
-  .halfmoon {
-    height: 3.2rem;
+  .halfmoon-sm {
+    height: 1.625rem;
+    padding: 0.625rem;
   }
   .loading > .text {
     visibility: hidden;
@@ -41,7 +42,7 @@ const Button = forwardRef(
     const STYLES = {
       pill: `w-24 h-8 rounded-lg`,
       classic: `classic whitespace-no-wrap`,
-      halfmoon: `halfmoon whitespace-no-wrap px-6 rounded-md`,
+      halfmoon: `whitespace-no-wrap rounded-md`,
       link: `${textColor} hover:underline`,
     };
 
@@ -60,9 +61,9 @@ const Button = forwardRef(
         lg: "px-8 h-12",
       },
       halfmoon: {
-        sm: "px-4 h-10",
-        md: "",
-        lg: "px-8 h-16",
+        sm: "halfmoon-sm",
+        md: "px-4 h-8",
+        lg: "px-5 h-12",
       },
     };
 
