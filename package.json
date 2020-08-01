@@ -1,6 +1,6 @@
 {
   "name": "@bulbariss/ui",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "ui",
   "license": "MIT",
   "repository": "Bulbariss/ui",
@@ -13,7 +13,8 @@
     "build": "rollup -c",
     "prepublishOnly": "rm -rf lib && npm run build",
     "postbuild": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
-    "docs:build": "styleguidist build"
+    "docs:build": "styleguidist build",
+    "publish": "npm publish --access=public"
   },
   "peerDependencies": {
     "react": "^16.x",

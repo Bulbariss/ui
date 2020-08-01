@@ -21,6 +21,7 @@ const Button = forwardRef(
   (
     {
       children,
+      btnCss,
       className,
       type = "classic",
       color,
@@ -63,7 +64,7 @@ const Button = forwardRef(
       halfmoon: {
         sm: "halfmoon-sm",
         md: "px-4 h-8",
-        lg: "px-5 h-12",
+        lg: "px-5 h-10",
       },
     };
 
@@ -72,7 +73,7 @@ const Button = forwardRef(
     }`;
 
     const classList = `${VARIANTS[variant]} ${STYLES[type]} ${
-      type === "classic" || (type === "halfmoon" && SIZES[type][size])
+      type === "classic" || type === "halfmoon" ? SIZES[type][size] : ""
     } ${className} ${allButtonsStyle} ${isBold && "font-bold"} ${
       isDisabled && "cursor-not-allowed opacity-50"
     }`;
@@ -89,6 +90,11 @@ const Button = forwardRef(
         >
           {children}
           <style jsx>{buttonStyles}</style>
+          <style jsx>{`
+            a {
+              ${btnCss}
+            }
+          `}</style>
         </a>
       );
 
@@ -100,6 +106,11 @@ const Button = forwardRef(
           style={{ borderRadius: "5px" }}
         >
           {children}
+          <style jsx>{`
+            a {
+              ${btnCss}
+            }
+          `}</style>
         </Link>
       );
 
@@ -108,7 +119,7 @@ const Button = forwardRef(
 
     return (
       <>
-        <button ref={ref} className={`${classList}`} {...props}>
+        <button ref={ref} className={classList} {...props}>
           {isLoading && (
             <Spinner
               size={spinnerSize}
@@ -119,6 +130,11 @@ const Button = forwardRef(
           <span className="text">{children}</span>
         </button>
         <style jsx>{buttonStyles}</style>
+        <style jsx>{`
+          button {
+            ${btnCss}
+          }
+        `}</style>
       </>
     );
   }
@@ -126,6 +142,7 @@ const Button = forwardRef(
 
 Button.propTypes = {
   className: PropTypes.string,
+  btnCss: PropTypes.string,
   type: PropTypes.string,
   color: PropTypes.string,
   textColor: PropTypes.string,

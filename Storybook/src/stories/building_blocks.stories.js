@@ -13,11 +13,13 @@ export const Buttons = () => (
       Testing
     </Button>
     <Button
-      type="halfmoon"
+      type="none"
+      variant="none"
       color="bg-indigo-600"
       textColor="text-white"
       hoverColor="hover:bg-indigo-700"
-      size="sm"
+      size="lg"
+      btnCss="background-color: #333; color: #fff; font-size: 12px; padding: 10px 20px;"
       className="ml-8"
     >
       Testing
@@ -45,10 +47,11 @@ export const Buttons = () => (
     </Button>
     <Button
       variant="outline"
-      color="bg-indigo-600"
-      textColor="text-white"
-      hoverColor="hover:bg-indigo-900"
+      color=""
+      textColor="text-black"
+      hoverColor="hover:bg-indigo-300"
       className="ml-8"
+      btnCss="background-color: #333;"
       href="https://nextjs.org/docs/api-reference/next/link"
     >
       Test
