@@ -10,6 +10,8 @@
     "purgecss"
   ],
   "dependencies": {
+    "@bulbariss/ui": "^1.0.9",
+    "babel-preset-react-app": "^9.1.2",
     "framer-motion": "^1.11.0",
     "gatsby": "2.23.1",
     "gatsby-background-image": "^1.1.1",
@@ -31,8 +33,7 @@
     "react-helmet": "6.1.0",
     "react-pts-canvas": "^0.2.8",
     "simplex-noise": "^2.4.0",
-    "styled-jsx": "^3.3.0",
-    "swiper": "^5.4.2"
+    "styled-jsx": "^3.3.0"
   },
   "license": "MIT",
   "scripts": {

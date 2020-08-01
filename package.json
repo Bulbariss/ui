@@ -1,6 +1,6 @@
 {
   "name": "@bulbariss/ui",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "ui",
   "license": "MIT",
   "repository": "Bulbariss/ui",
@@ -19,15 +19,16 @@
     "react": "^16.x",
     "styled-jsx": "^3.x",
     "tailwindcss": "^1.x",
-    "gastby": "^1.x"
+    "gatsby": "2.x"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
-    "gastby": "^1.0.1",
+    "gatsby": "^2.23.1",
     "gatsby-plugin-styled-jsx": "^3.3.11",
+    "prop-types": "^15.7.2",
     "rollup": "^2.23.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",

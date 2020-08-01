@@ -2,7 +2,7 @@ import React from "react";
 import { configure } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 // this is required, otherwise storybook won't properly load tailwind
-// import { addDecorator } from "@storybook/react";
+import { addDecorator } from "@storybook/react";
 // import { withPerformance } from "storybook-addon-performance";
 // import { addParameters } from "@storybook/client-api";
 // import { withInfo } from "@storybook/addon-info";

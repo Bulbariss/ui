@@ -72,7 +72,7 @@ const Button = forwardRef(
     }`;
 
     const classList = `${VARIANTS[variant]} ${STYLES[type]} ${
-      type === "classic" && SIZES[type][size]
+      type === "classic" || (type === "halfmoon" && SIZES[type][size])
     } ${className} ${allButtonsStyle} ${isBold && "font-bold"} ${
       isDisabled && "cursor-not-allowed opacity-50"
     }`;
