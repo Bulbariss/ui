@@ -6,7 +6,7 @@ const Select = (props, ref) => {
   return (
     <label htmlFor="select">
       <select
-        className="w-full md:w-64 bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md"
+        className="w-full md:w-64 bg-grey-50 border-2 border-grey-400 focus:border-grey-600 rounded-md appearance-none shadow-none box-border align-middle bg-no-repeat"
         {...props}
         ref={ref}
         id="select"
@@ -20,15 +20,10 @@ const Select = (props, ref) => {
       </select>
       <style jsx>{`
         label select {
-          background-repeat: no-repeat;
           background-position-x: 98%;
           background-position-y: 50%;
-          appearance: none;
-          height: 38px;
-          padding: 6px 10px;
-          box-shadow: none;
-          box-sizing: border-box;
-          vertical-align: middle;
+          height: 2.375rem;
+          padding: 0.375rem 0.625rem;
           line-height: normal;
         }
       `}</style>

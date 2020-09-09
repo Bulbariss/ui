@@ -33,7 +33,7 @@ function CookieBanner({ isVisible }) {
     >
       <div
         id="cookie-banner-container"
-        className="max-w-80 bg-grey-300 flex rounded-lg py-4 sm:py-2 items-center flex-col sm:flex-row px-4 w-fit "
+        className="max-w-80 bg-grey-300 flex rounded-lg py-4 sm:py-2 items-center flex-col sm:flex-row px-4 w-fit"
       >
         <p className="h-fit text-coolgrey-900 pb-2 md:pb-0">
           This website uses cookies to ensure you get the best experience.{" "}
@@ -48,7 +48,7 @@ function CookieBanner({ isVisible }) {
           <Button
             onClick={() => decline()}
             type="classic"
-            className="border-2 border-dark hover:bg-grey-200"
+            className="border-2 border-dark hover:bg-gray-200"
           >
             Decline
           </Button>

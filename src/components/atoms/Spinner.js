@@ -1,11 +1,12 @@
 import React, { forwardRef } from "react";
 
-const Spinner = ({ color, size, loadingText, ...props }, ref) => {
+const Spinner = ({ color, size = "md", loadingText, ...props }, ref) => {
   const SIZES = {
     sm: "w-3 h-3",
     md: "w-4 h-4",
     lg: "w-6 h-6",
   };
+
   return (
     <>
       <div
@@ -46,4 +47,5 @@ const Spinner = ({ color, size, loadingText, ...props }, ref) => {
     </>
   );
 };
+
 export default forwardRef(Spinner);

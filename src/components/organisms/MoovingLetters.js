@@ -1,6 +1,15 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, createElement } from "react";
+import PropTypes from "prop-types";
 
-function MoovingLetters({ text, className, delay = 1000, inView }) {
+function MoovingLetters({
+  text,
+  className,
+  delay = 1000,
+  inView,
+  textColor = "#333",
+  as = "div",
+  ...props
+}) {
   let charPosition = useRef(-1);
   let iteration = useRef(0);
   let letters = useRef(text.replace(/\s/g, ""));
@@ -74,12 +83,19 @@ function MoovingLetters({ text, className, delay = 1000, inView }) {
   }, [inView]);
 
   return (
-    <div
-      aria-label={text}
-      ref={textWrapper}
-      className={className}
-      id="mooving-letters"
-    >
+    <>
+      {createElement(
+        as,
+        {
+          "aria-label": text,
+          ref: textWrapper,
+          className: className,
+          id: "mooving-letters",
+          ...props,
+        },
+        ""
+      )}
+
       <style global jsx>{`
         #mooving-letters > .word {
           position: relative;
@@ -94,7 +110,7 @@ function MoovingLetters({ text, className, delay = 1000, inView }) {
 
         #mooving-letters span.sym-0,
         #mooving-letters-invisible span.sym-0 {
-          color: rgba(var(--color-dark), 1);
+          color: ${textColor};
         }
 
         #mooving-letters span.char::after,
@@ -102,7 +118,7 @@ function MoovingLetters({ text, className, delay = 1000, inView }) {
           position: absolute;
           left: 0;
           top: -15%;
-          color: rgba(var(--color-dark), 1);
+          color: ${textColor};
           visibility: visible;
         }
 
@@ -278,8 +294,17 @@ function MoovingLetters({ text, className, delay = 1000, inView }) {
           content: "/";
         }
       `}</style>
-    </div>
+    </>
   );
 }
+
+MoovingLetters.propTypes = {
+  text: PropTypes.string.isRequired,
+  textColor: PropTypes.string,
+  className: PropTypes.string,
+  delay: PropTypes.number,
+  inView: PropTypes.bool,
+  as: PropTypes.string,
+};
 
 export default MoovingLetters;

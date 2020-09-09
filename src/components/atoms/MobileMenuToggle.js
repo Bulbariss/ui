@@ -10,7 +10,7 @@ function MobileMenuToggle({ children }) {
     <>
       <div
         id="menuToggle"
-        className="w-auto ml-auto py-0 px-4 flex md:hidden flex items-center"
+        className="w-auto ml-auto py-0 px-4 flex md:hidden items-center"
       >
         <button
           onClick={toggleNav}

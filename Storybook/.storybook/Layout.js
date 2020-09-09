@@ -3,6 +3,7 @@ import "../src/css/style.css";
 
 const Layout = ({ children }) => {
   useEffect(() => {
+    document.body.style.padding = "0";
     function handleFirstTab(e) {
       if (e.keyCode === 9) {
         // the "I am a keyboard user" key

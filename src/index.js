@@ -13,5 +13,6 @@ export { default as MobileMenuMini } from "components/organisms/MobileMenuMini";
 export { default as MobileMenu } from "components/organisms/MobileMenu";
 export { default as Header } from "components/organisms/Header";
 export { default as Footer } from "components/organisms/Footer";
-export { default as cookieBanner } from "components/organisms/cookieBanner";
+export { default as CookieBanner } from "components/organisms/CookieBanner";
+export { default as ContactForm } from "components/organisms/ContactForm";
 export { default as SmartOutline } from "components/utils/SmartOutline";

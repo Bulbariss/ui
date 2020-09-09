@@ -1,19 +1,20 @@
 import React, { forwardRef } from "react";
 
-const classes = "outline-none";
+const defaultStyle =
+  "outline-none appearance-none shadow-none box-border align-middle";
 
-const Input = ({ className, ...props }, ref) => {
+const Input = ({ className, custom, ...props }, ref) => {
   return (
     <>
-      <input {...props} className={`${classes} ${className}`} ref={ref} />
+      <input
+        className={`${custom || defaultStyle} ${className}`}
+        ref={ref}
+        {...props}
+      />
       <style jsx>{`
         input {
-          vertical-align: middle;
           line-height: normal;
-          padding: 6px 10px;
-          box-shadow: none;
-          box-sizing: border-box;
-          appearance: none;
+          padding: 0.375rem 0.625rem;
           transition: border-color 0.2s;
         }
 

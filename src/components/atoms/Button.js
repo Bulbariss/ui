@@ -6,11 +6,11 @@ import PropTypes from "prop-types";
 
 const buttonStyles = css`
   .classic {
-    border-radius: 5px;
+    border-radius: 0.3125rem;
   }
   .halfmoon-sm {
     height: 1.625rem;
-    padding: 0.625rem;
+    padding: 0 0.625rem;
   }
   .loading > .text {
     visibility: hidden;
@@ -23,12 +23,12 @@ const Button = forwardRef(
       children,
       btnCss,
       className,
+      custom,
       type = "classic",
       color,
       hoverColor = color,
       textColor = "text-white",
       hoverTextColor,
-      variant = "solid",
       size = "md",
       spinnerSize = size,
       isLoading = false,
@@ -41,18 +41,9 @@ const Button = forwardRef(
     ref
   ) => {
     const STYLES = {
-      pill: `w-24 h-8 rounded-lg`,
-      classic: `classic whitespace-no-wrap`,
-      halfmoon: `whitespace-no-wrap rounded-md`,
-      link: `${textColor} hover:underline`,
-    };
-
-    const VARIANTS = {
-      solid: `${color} ${textColor} ${hoverColor}`,
-      outline: `border-2 ${color} ${textColor} ${hoverColor} ${
-        hoverTextColor || hoverColor
-      }`,
-      ghost: `${textColor} bg-transparent ${hoverColor}`,
+      pill: `rounded-lg`,
+      classic: `classic`,
+      halfmoon: `rounded-md`,
     };
 
     const SIZES = {
@@ -66,23 +57,33 @@ const Button = forwardRef(
         md: "px-4 h-8",
         lg: "px-5 h-10",
       },
+      pill: {
+        sm: "w-20 h-6",
+        md: "w-24 h-8",
+        lg: "w-32 h-10",
+      },
     };
 
-    const allButtonsStyle = `transition-colors duration-200 inline-flex items-center justify-center flex-wrap focus:outline-none focus:shadow-outline ${
+    const allButtonsStyle = `whitespace-no-wrap transition-colors duration-200 inline-flex items-center justify-center flex-wrap focus:outline-none focus:shadow-outline ${
       loadingText && isLoading && "loading"
     }`;
 
-    const classList = `${VARIANTS[variant]} ${STYLES[type]} ${
-      type === "classic" || type === "halfmoon" ? SIZES[type][size] : ""
-    } ${className} ${allButtonsStyle} ${isBold && "font-bold"} ${
-      isDisabled && "cursor-not-allowed opacity-50"
-    }`;
+    const classList = `
+    ${color || ""}
+    ${textColor || ""}
+    ${hoverColor || ""}
+    ${STYLES[type] || ""} 
+    ${SIZES[type][size] || ""} 
+    ${className || ""} 
+    ${allButtonsStyle} 
+    ${isBold && "font-bold"} 
+    ${isDisabled && "cursor-not-allowed opacity-50"}`;
 
     if (href) {
       const isExternal = href && href.startsWith("http");
       const a = (
         <a
-          className={classList}
+          className={custom ? `${allButtonsStyle} ${custom}` : classList}
           href={href}
           {...props}
           target="_blank"
@@ -100,7 +101,7 @@ const Button = forwardRef(
 
       const b = (
         <Link
-          className={classList}
+          className={custom ? `${allButtonsStyle} ${custom}` : classList}
           to={href}
           {...props}
           style={{ borderRadius: "5px" }}
@@ -119,7 +120,11 @@ const Button = forwardRef(
 
     return (
       <>
-        <button ref={ref} className={classList} {...props}>
+        <button
+          ref={ref}
+          className={custom ? `${allButtonsStyle} ${custom}` : classList}
+          {...props}
+        >
           {isLoading && (
             <Spinner
               size={spinnerSize}
@@ -141,12 +146,12 @@ const Button = forwardRef(
 );
 
 Button.propTypes = {
+  custom: PropTypes.string,
   className: PropTypes.string,
   btnCss: PropTypes.string,
   type: PropTypes.string,
   color: PropTypes.string,
   textColor: PropTypes.string,
-  variant: PropTypes.string,
   hoverColor: PropTypes.string,
   hoverTextColor: PropTypes.string,
   isBold: PropTypes.bool,
