@@ -2,7 +2,6 @@ import React, { forwardRef } from "react";
 import Spinner from "./Spinner";
 import css from "styled-jsx/css";
 import { Link } from "gatsby";
-import PropTypes from "prop-types";
 
 const buttonStyles = css`
   .classic {
@@ -144,23 +143,6 @@ const Button = forwardRef(
     );
   }
 );
-
-Button.propTypes = {
-  custom: PropTypes.string,
-  className: PropTypes.string,
-  btnCss: PropTypes.string,
-  type: PropTypes.string,
-  color: PropTypes.string,
-  textColor: PropTypes.string,
-  hoverColor: PropTypes.string,
-  hoverTextColor: PropTypes.string,
-  isBold: PropTypes.bool,
-  size: PropTypes.string,
-  isLoading: PropTypes.bool,
-  isDisabled: PropTypes.bool,
-  loadingText: PropTypes.bool,
-  href: PropTypes.string,
-};
 
 Button.displayName = "Button";
 

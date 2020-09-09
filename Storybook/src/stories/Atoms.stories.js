@@ -1,5 +1,10 @@
 import React from "react";
-import { Button, Spinner, ThemeToggle, CloseButton } from "../../../";
+import {
+  Button,
+  Spinner as Spinnerr,
+  ThemeToggle,
+  CloseButton,
+} from "../../../";
 import Wrapper from "../components/Wrapper";
 import CenteredWrapper from "../components/CenteredWrapper";
 export default { title: "Atoms" };
@@ -167,10 +172,10 @@ export const Close_Button = () => {
   );
 };
 
-export const Spinnerr = () => {
+export const Spinner = () => {
   return (
     <CenteredWrapper heading="Spinner">
-      <Spinner size="lg" />
+      <Spinnerr size="lg" />
     </CenteredWrapper>
   );
 };

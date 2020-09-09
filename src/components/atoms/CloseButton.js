@@ -1,5 +1,4 @@
 import React, { forwardRef } from "react";
-import PropTypes from "prop-types";
 
 const defaultStyle =
   "inline-flex justify-center items-center rounded-md duration-100 transition-colors";
@@ -41,17 +40,6 @@ const CloseButton = (
       </svg>
     </button>
   );
-};
-
-CloseButton.propTypes = {
-  className: PropTypes.string,
-  iconSize: PropTypes.number,
-  buttonSize: PropTypes.number,
-  ariaLabel: PropTypes.string,
-  iconColor: PropTypes.string,
-  hoverBgColor: PropTypes.string,
-  custom: PropTypes.string,
-  IconStrokeWidth: PropTypes.string,
 };
 
 export default forwardRef(CloseButton);
