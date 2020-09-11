@@ -27,7 +27,6 @@ const Button = forwardRef(
       color,
       hoverColor = color,
       textColor = "text-white",
-      hoverTextColor,
       size = "md",
       spinnerSize = size,
       isLoading = false,

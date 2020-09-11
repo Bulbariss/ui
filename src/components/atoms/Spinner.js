@@ -1,6 +1,9 @@
 import React, { forwardRef } from "react";
 
-const Spinner = ({ color, size = "md", loadingText, ...props }, ref) => {
+const Spinner = (
+  { color = "border-gray-300", size = "md", loadingText, ...props },
+  ref
+) => {
   const SIZES = {
     sm: "w-3 h-3",
     md: "w-4 h-4",

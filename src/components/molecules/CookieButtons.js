@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
-import CookieBanner from "../organisms/cookieBanner";
+import CookieBanner from "../organisms/CookieBanner";
+import Button from "../atoms/Button";
 import { getCookie } from "../utils/CookieUtils";
 
-function CookieButtons({ classes }) {
+function CookieButtons({
+  className,
+  firstButtonProps,
+  firstButtonText = "Privacy Policy",
+  secondButtonText = "Cookie preferences",
+  secondButtonProps,
+  bannerProps,
+  ...props
+}) {
   let [isBannerVisible, setIsBannerVisible] = useState({
     visible: false,
   });
@@ -15,17 +23,18 @@ function CookieButtons({ classes }) {
 
   return (
     <>
-      <div className={classes}>
-        <Link className="hover-opacity" to="/privacy-policy">
-          Privacy Policy &#32;
-        </Link>
+      <div className={className}>
+        <Button {...props} {...firstButtonProps} className="hover-opacity">
+          {firstButtonText}
+        </Button>
         <span className="px-1">|</span>
-        <button
+        <Button
           onClick={() => setIsBannerVisible({ visible: true })}
+          {...props}
           className="cursor-pointer hover-opacity btn-change-cookie-preferences inline"
         >
-          Cookie preferences
-        </button>
+          {secondButtonText}
+        </Button>
       </div>
       <CookieBanner isVisible={isBannerVisible} />
     </>

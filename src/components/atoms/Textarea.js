@@ -21,6 +21,9 @@ const Textarea = (
         ref={ref}
         placeholder={placeholder}
         className={`${custom || defaultStyle} ${className}`}
+        maxLength={maxLength}
+        rows={rows}
+        wrap={wrap}
         {...props}
       ></textarea>
       <style jsx>{`

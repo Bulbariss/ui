@@ -30,4 +30,12 @@ export { default as FadingText } from "components/text_effects/FadingText";
 export { default as SmartOutline } from "components/utils/SmartOutline";
 export { default as useEventListener } from "components/utils/useEventListener";
 export { default as useIntersect } from "components/utils/useIntersect";
-// export { default as CookieUtils } from "components/utils/CookieUtils";
+export {
+  handleAllowCookies,
+  handleRejectCookies,
+  getCookie,
+  activateCookies,
+  deactivateCookies,
+  googleAnalytics,
+  setCookie,
+} from "components/utils/CookieUtils";

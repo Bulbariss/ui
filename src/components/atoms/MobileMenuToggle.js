@@ -1,20 +1,24 @@
 import React from "react";
 
-function MobileMenuToggle({ children }) {
+function MobileMenuToggle({
+  children,
+  className,
+  ariaLabel = "Toggle navigation",
+  toggleClass = "mobile-menu-active",
+}) {
   function toggleNav() {
-    document
-      .getElementsByTagName("body")[0]
-      .classList.toggle("mobile-menu-active");
+    document.body.classList.toggle(toggleClass);
   }
+
   return (
     <>
       <div
         id="menuToggle"
-        className="w-auto ml-auto py-0 px-4 flex md:hidden items-center"
+        className={`w-auto py-0 px-4 flex md:hidden items-center ${className}`}
       >
         <button
           onClick={toggleNav}
-          aria-label="Toggle navigation"
+          aria-label={ariaLabel}
           type="button"
           className="cursor-pointer relative block md:hidden w-10 h-10"
         />

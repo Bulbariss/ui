@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import useEventListener from "../utils/useEventListener";
+import PropTypes from "prop-types";
 
 function RotatingText({
   numberOfSides,
@@ -64,7 +65,7 @@ function RotatingText({
     // setTimeout(() => {
     getDimentions();
     setTransZ(getDistance());
-    // }, 400);
+    // }, 200);
   }, []);
 
   useEffect(() => {
@@ -78,7 +79,7 @@ function RotatingText({
 
   return (
     <div>
-      <div className="scene w-screen h-screen w-screen flex items-center justify-center">
+      <div className="scene w-screen h-screen flex items-center justify-center">
         <div
           className={`carousel ${isActive}`}
           style={{
@@ -138,5 +139,12 @@ function RotatingText({
     </div>
   );
 }
+
+RotatingText.propTypes = {
+  className: PropTypes.string,
+  numberOfSides: PropTypes.number,
+  rotationIn: PropTypes.number,
+  entry: PropTypes.bool,
+};
 
 export default RotatingText;

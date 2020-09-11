@@ -1,7 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import useEventListener from "../utils/useEventListener";
+import PropTypes from "prop-types";
 
-function Rotating({ numberOfSides, className, children, rotationIn, entry }) {
+function Rotating({
+  numberOfSides = 12,
+  rotationIn = 20,
+  perspective = "140px",
+  className,
+  children,
+  entry = false,
+}) {
   let [transZ, setTransZ] = useState(0);
   let [sideHeight, setSideHeight] = useState(0);
   let [sideWidth, setSideWidth] = useState(0);
@@ -55,10 +63,10 @@ function Rotating({ numberOfSides, className, children, rotationIn, entry }) {
   });
 
   useEffect(() => {
-    setTimeout(() => {
-      getDimentions();
-      setTransZ(getDistance());
-    }, 800);
+    // setTimeout(() => {
+    getDimentions();
+    setTransZ(getDistance());
+    // }, 200);
   }, []);
 
   useEffect(() => {
@@ -97,7 +105,7 @@ function Rotating({ numberOfSides, className, children, rotationIn, entry }) {
         {`
           .scene {
             position: relative;
-            perspective: 140px;
+            perspective: ${perspective};
             text-rendering: geometricPrecision;
           }
 
@@ -141,5 +149,13 @@ function Rotating({ numberOfSides, className, children, rotationIn, entry }) {
     </div>
   );
 }
+
+Rotating.propTypes = {
+  className: PropTypes.string,
+  perspective: PropTypes.string,
+  numberOfSides: PropTypes.number,
+  rotationIn: PropTypes.number,
+  entry: PropTypes.bool,
+};
 
 export default Rotating;

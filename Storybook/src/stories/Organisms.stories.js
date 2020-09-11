@@ -1,5 +1,5 @@
 import React from "react";
-import { MoovingLetters, ContactForm, CookieBanner } from "../../../";
+import {  ContactForm, CookieBanner } from "../../../";
 import CenteredWrapper from "../components/CenteredWrapper";
 export default { title: "Organisms" };
 
@@ -39,16 +39,3 @@ export const Form = () => {
     </CenteredWrapper>
   );
 };
-
-export const Glitch = () => (
-  <CenteredWrapper heading="Mooving Letters">
-    <MoovingLetters
-      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quis!"
-      textColor="#333"
-      inView
-      delay={5000}
-      className="text-3xl font-bold text-center"
-      as="h1"
-    ></MoovingLetters>
-  </CenteredWrapper>
-);

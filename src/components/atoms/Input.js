@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 
 const defaultStyle =
-  "outline-none appearance-none shadow-none box-border align-middle";
+  "outline-none appearance-none shadow-none box-border align-middle w-full";
 
 const Input = ({ className, custom, ...props }, ref) => {
   return (

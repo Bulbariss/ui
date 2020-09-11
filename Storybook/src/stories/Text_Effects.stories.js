@@ -1,7 +1,13 @@
 import React from "react";
-import { FadingText, Rotating, RotatingText, useIntersect } from "../../../";
+import {
+  FadingText,
+  Rotating,
+  RotatingText,
+  useIntersect,
+  MoovingLetters,
+} from "../../../";
 // import Wrapper from "../components/Wrapper";
-// import CenteredWrapper from "../components/CenteredWrapper";
+import CenteredWrapper from "../components/CenteredWrapper";
 export default { title: "Text Effects" };
 
 export const Rotatingtext = () => {
@@ -30,9 +36,10 @@ export const RotatingSp = () => {
     <section className="h-screen bg-black" ref={ref}>
       <Rotating
         numberOfSides={16}
-        className="text-5xl sm:text-4xl lg:text-4xl font-bold absolute leading-snug bg-black text-white"
+        className="text-4xl sm:text-4xl lg:text-4xl font-bold absolute leading-snug bg-black text-white"
         rotationIn={20}
         entry={entry}
+        perspective="120px"
       >
         ХУЙХУЙХУЙХУЙ
       </Rotating>
@@ -58,3 +65,16 @@ export const Fadingtext = () => {
     </section>
   );
 };
+
+export const Glitch = () => (
+  <CenteredWrapper heading="Mooving Letters">
+    <MoovingLetters
+      text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quis!"
+      textColor="#333"
+      inView
+      delay={3000}
+      className="text-3xl font-bold text-center max-w-3xl"
+      as="h1"
+    ></MoovingLetters>
+  </CenteredWrapper>
+);
