@@ -1,16 +1,18 @@
 import React, { forwardRef } from "react";
 
-const defaultStyle =
-  "outline-none appearance-none shadow-none box-border align-middle w-full";
+const defaultStyle = "";
 
-const Input = ({ className, custom, ...props }, ref) => {
+const Input = (
+  {
+    className,
+    style = "outline-none appearance-none shadow-none box-border align-middle w-full",
+    ...props
+  },
+  ref
+) => {
   return (
     <>
-      <input
-        className={`${custom || defaultStyle} ${className}`}
-        ref={ref}
-        {...props}
-      />
+      <input className={`${style} ${className}`} ref={ref} {...props} />
       <style jsx>{`
         input {
           line-height: normal;

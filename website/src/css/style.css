@@ -87,7 +87,7 @@ textarea::-webkit-input-placeholder {
     url("../fonts/Inter-Medium.woff") format("woff");
 }
 
-@font-face {
+/* @font-face {
   font-family: "iAWriterDuospace";
   font-style: normal;
   font-weight: 400;
@@ -105,7 +105,7 @@ textarea::-webkit-input-placeholder {
   src: url("../fonts/iAWriterDuospace-Bold.eot") format("embedded-opentype"),
     url("../fonts/iAWriterDuospace-Bold.woff2") format("woff2"),
     url("../fonts/iAWriterDuospace-Bold.woff") format("woff");
-}
+} */
 
 /* Font Declaration */
 
@@ -160,7 +160,6 @@ textarea::-webkit-input-placeholder {
 .h-fit {
   height: fit-content;
 }
-
 
 .color-invert {
   filter: invert(1);

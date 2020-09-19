@@ -1,24 +1,25 @@
 # Sidebar navigation
 
-- label: 'Introduction'
-  link: '/'
-- label: 'Getting started'
-  link: '/getting-started'
-- label: Usage
+- label: "Introduction"
+  link: "/"
+- label: Atoms
   items:
-    - label: 'Creating docs'
-      link: '/usage/creating-docs'
-    - label: 'Navigation'
-      link: '/usage/navigation'
-    - label: 'Shadowing'
-      link: '/usage/shadowing'
-- label: More
-  items:
-    - label: FAQ
-      link: /faq
-    - label: Changelog
-      link: /changelog
+    - label: "Button"
+      link: "/Components/Atoms/Button"
+    - label: "Close Button"
+      link: "/Components/Atoms/CloseButton"
+    - label: "Input"
+      link: "/Components/Atoms/Input"
+    - label: "Textarea"
+      link: "/Components/Atoms/Textarea"
+    - label: "Label"
+      link: "/Components/Atoms/Label"
+    - label: "Spinner"
+      link: "/Components/Atoms/Spinner"
+    - label: "ThemeToggle"
+      link: "/Components/Atoms/ThemeToggle"
+
 - label: Community
   items:
-    - label: 'Github'
-      link: https://github.com/rocketseat/gatsby-themes
+    - label: "Github"
+      link: https://github.com/bulbariss/ui

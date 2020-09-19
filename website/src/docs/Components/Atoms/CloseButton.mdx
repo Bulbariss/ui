@@ -1,0 +1,35 @@
+---
+title: Close Button
+description: Close Button.
+---
+
+## Import
+
+```js lineNumbers=true
+import { CloseButton } from "@bulbariss/ui";
+```
+
+## Usage
+
+```jsx lineNumbers=true live=true
+render(
+  <div className="flex justify-center items-center">
+    <CloseButton
+      iconSize="8"
+      buttonSize="12"
+      className="rounded-lg hover:bg-gray-100"
+      IconStrokeWidth="0.15rem"
+    />
+  </div>
+);
+```
+
+| Name              | Type     | Default                                                                             | Description                |
+| ----------------- | -------- | ----------------------------------------------------------------------------------- | -------------------------- |
+| `iconSize`        | `string` | `4`                                                                                 | Size of SVG inside button. |
+| `buttonSize`      | `string` | `8`                                                                                 | Size of the button.        |
+| `IconStrokeWidth` | `string` | `0.25rem`                                                                           | Icon stroke width.         |
+| `ariaLabel`       | `string` | `Close`                                                                             | Aria Label for button.     |
+| `className`       | `string` |                                                                                     | className string.          |
+| `IconClassName`   | `string` | `text-red-600`                                                                      | Icon className string.     |
+| `style`           | `string` | `inline-flex justify-center items-center rounded-md duration-100 transition-colors` | Default button styling.    |

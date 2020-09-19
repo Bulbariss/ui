@@ -1,0 +1,40 @@
+---
+title: Input
+description: Input.
+---
+
+## Import
+
+```js lineNumbers=true
+import { Input } from "@bulbariss/ui";
+```
+
+## Usage
+
+```jsx lineNumbers=true live=true
+render(
+  <div className="flex justify-center items-center">
+    <Input
+      className="border-2 border-gray-400 focus:border-gray-600 rounded-md"
+      placeholder="Placeholder"
+    />
+  </div>
+);
+```
+
+## Styling
+
+```css lineNumbers=true
+.input-theme {
+  @apply border-gray-400 border-2 rounded-md;
+}
+
+.input-theme:focus {
+  @apply border-gray-600;
+}
+```
+
+| Name        | Type     | Default                                                                   | Description            |
+| ----------- | -------- | ------------------------------------------------------------------------- | ---------------------- |
+| `style`     | `string` | `outline-none appearance-none shadow-none box-border align-middle w-full` | Default input styling. |
+| `className` | `string` |                                                                           | className string.      |

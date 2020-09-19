@@ -6,21 +6,16 @@ const Textarea = (
     maxLength = "180",
     rows = "6",
     wrap = "hard",
-    custom,
-    placeholder,
+    style = "w-full text-base outline-none focus:outline-none align-middle shadow-none box-border appearance-none transition-colors duration-200",
     ...props
   },
   ref
 ) => {
-  const defaultStyle =
-    "w-full text-base outline-none focus:outline-none align-middle shadow-none box-border appearance-none transition-colors duration-200";
-
   return (
     <>
       <textarea
         ref={ref}
-        placeholder={placeholder}
-        className={`${custom || defaultStyle} ${className}`}
+        className={`${style} ${className}`}
         maxLength={maxLength}
         rows={rows}
         wrap={wrap}

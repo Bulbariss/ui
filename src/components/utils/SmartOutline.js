@@ -17,7 +17,7 @@ function SmartOutline() {
   }, []);
   return (
     <>
-      <style>{`
+      <style jsx global>{`
         body:not(.user-is-tabbing) button:focus,
         body:not(.user-is-tabbing) input:focus,
         body:not(.user-is-tabbing) select:focus,

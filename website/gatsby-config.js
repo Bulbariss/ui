@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `Rocket Docs`,
+    siteTitle: `test`,
     defaultTitle: `Rocket Docs`,
     siteTitleShort: `Rocket Docs`,
     siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
@@ -13,15 +13,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `@rocketseat/gatsby-theme-docs`,
-      options: {
-        configPath: `src/config`,
-        docsPath: `src/docs`,
-        githubUrl: `https://github.com/rocketseat/gatsby-themes`,
-        baseDir: `examples/gatsby-theme-docs`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Rocketseat Gatsby Themes`,
@@ -30,6 +21,34 @@ module.exports = {
         background_color: `#ffffff`,
         display: `standalone`,
         icon: `static/favicon.png`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-postcss",
+      options: {
+        postCssPlugins: [
+          require(`tailwindcss`)(`./tailwind.config.js`),
+          require(`autoprefixer`),
+          require(`cssnano`),
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        whitelistPatterns: [/sym-\d?\d/g],
+        purgeOnly: [`src/css/style.css`],
+      },
+    },
+    `gatsby-plugin-styled-jsx`,
+    {
+      resolve: `@rocketseat/gatsby-theme-docs`,
+      options: {
+        configPath: `src/config`,
+        docsPath: `src/docs`,
+        githubUrl: `https://github.com/rocketseat/gatsby-themes`,
+        baseDir: `examples/gatsby-theme-docs`,
       },
     },
     `gatsby-plugin-sitemap`,

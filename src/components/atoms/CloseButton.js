@@ -1,18 +1,14 @@
 import React, { forwardRef } from "react";
 
-const defaultStyle =
-  "inline-flex justify-center items-center rounded-md duration-100 transition-colors";
-
 const CloseButton = (
   {
     className,
+    IconClassName = "text-red-600",
     iconSize = 4,
     buttonSize = 8,
     IconStrokeWidth = "0.25rem",
     ariaLabel = "Close",
-    iconColor = "text-red-600",
-    hoverBgColor = "hover:bg-gray-100",
-    custom,
+    style = "inline-flex justify-center items-center rounded-md duration-100 transition-colors",
     ...props
   },
   ref
@@ -20,9 +16,7 @@ const CloseButton = (
   return (
     <button
       ref={ref}
-      className={`${
-        custom || defaultStyle
-      } ${className} w-${buttonSize} h-${buttonSize} ${hoverBgColor}`}
+      className={`${style} ${className} w-${buttonSize} h-${buttonSize}`}
       aria-label={ariaLabel}
       type="button"
       {...props}
@@ -32,7 +26,7 @@ const CloseButton = (
         focusable="false"
         role="presentation"
         aria-hidden="true"
-        className={`w-${iconSize} h-${iconSize} ${iconColor} stroke-current`}
+        className={`w-${iconSize} h-${iconSize} ${IconClassName} stroke-current`}
         strokeWidth={IconStrokeWidth}
       >
         <line x1="2" y1="2" x2="22" y2="22" />

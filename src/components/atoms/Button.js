@@ -20,19 +20,14 @@ const Button = forwardRef(
   (
     {
       children,
-      btnCss,
       className,
-      custom,
       type = "classic",
-      color,
-      hoverColor = color,
-      textColor = "text-white",
+      spinnerColor = "text-white",
       size = "md",
       spinnerSize = size,
       isLoading = false,
-      isBold = true,
       isDisabled = isLoading,
-      loadingText = true,
+      loadingText = false,
       href,
       ...props
     },
@@ -42,6 +37,8 @@ const Button = forwardRef(
       pill: `rounded-lg`,
       classic: `classic`,
       halfmoon: `rounded-md`,
+      custom: ``,
+      link: `hover:underline`,
     };
 
     const SIZES = {
@@ -60,56 +57,59 @@ const Button = forwardRef(
         md: "w-24 h-8",
         lg: "w-32 h-10",
       },
+      custom: {
+        sm: "",
+        md: "",
+        lg: "",
+      },
+      link: {
+        sm: "",
+        md: "",
+        lg: "",
+      },
     };
 
     const allButtonsStyle = `whitespace-no-wrap transition-colors duration-200 inline-flex items-center justify-center flex-wrap focus:outline-none focus:shadow-outline ${
-      loadingText && isLoading && "loading"
+      !loadingText && isLoading && "loading"
     }`;
 
-    const classList = `
-    ${color || ""}
-    ${textColor || ""}
-    ${hoverColor || ""}
-    ${STYLES[type] || ""} 
-    ${SIZES[type][size] || ""} 
-    ${className || ""} 
-    ${allButtonsStyle} 
-    ${isBold && "font-bold"} 
-    ${isDisabled && "cursor-not-allowed opacity-50"}`;
+    const spinner = (
+      <Spinner
+        size={spinnerSize}
+        loadingText={loadingText}
+        color={spinnerColor}
+      />
+    );
+
+    const classList = `${STYLES[type] || ""} ${SIZES[type][size] || ""} ${
+      className || ""
+    } ${allButtonsStyle} ${isDisabled && "cursor-not-allowed opacity-50"}`;
 
     if (href) {
       const isExternal = href && href.startsWith("http");
       const a = (
         <a
-          className={custom ? `${allButtonsStyle} ${custom}` : classList}
+          className={classList}
           href={href}
           {...props}
           target="_blank"
           rel="noreferrer"
         >
+          {isLoading && spinner}
           {children}
           <style jsx>{buttonStyles}</style>
-          <style jsx>{`
-            a {
-              ${btnCss}
-            }
-          `}</style>
         </a>
       );
 
       const b = (
         <Link
-          className={custom ? `${allButtonsStyle} ${custom}` : classList}
+          className={classList}
           to={href}
           {...props}
           style={{ borderRadius: "5px" }}
         >
+          {isLoading && spinner}
           {children}
-          <style jsx>{`
-            a {
-              ${btnCss}
-            }
-          `}</style>
         </Link>
       );
 
@@ -118,26 +118,11 @@ const Button = forwardRef(
 
     return (
       <>
-        <button
-          ref={ref}
-          className={custom ? `${allButtonsStyle} ${custom}` : classList}
-          {...props}
-        >
-          {isLoading && (
-            <Spinner
-              size={spinnerSize}
-              loadingText={loadingText}
-              color={textColor}
-            />
-          )}
+        <button ref={ref} className={classList} {...props}>
+          {isLoading && spinner}
           <span className="text">{children}</span>
         </button>
         <style jsx>{buttonStyles}</style>
-        <style jsx>{`
-          button {
-            ${btnCss}
-          }
-        `}</style>
       </>
     );
   }

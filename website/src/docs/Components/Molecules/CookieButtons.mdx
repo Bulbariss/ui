@@ -1,0 +1,31 @@
+---
+title: Cookie Buttons
+description: Cookie Buttons.
+---
+
+## Import
+
+```js lineNumbers=true
+import { CookieButtons } from "@bulbariss/ui";
+```
+
+## Usage
+
+```jsx lineNumbers=true live=true
+render(
+  <div className="flex justify-center items-center">
+    <CookieButtons
+      custom="text-black hover:underline"
+      bannerProps={{ declineButton: { text: "Decline" } }}
+      firstButtonProps={{ href: "/privacy-policy" }}
+    />
+  </div>
+);
+```
+
+| Name        | Type     | Default                                                                   | Description            |
+| ----------- | -------- | ------------------------------------------------------------------------- | ---------------------- |
+| `style`     | `string` | `outline-none appearance-none shadow-none box-border align-middle w-full` | Default input styling. |
+| `htmlFor`   | `string` |                                                                           | HTMLfor value.         |
+| `className` | `string` |                                                                           | className string.      |
+| `label`     | `string` |                                                                           | Label text.            |

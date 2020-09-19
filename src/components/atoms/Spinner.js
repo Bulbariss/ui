@@ -1,21 +1,22 @@
 import React, { forwardRef } from "react";
 
 const Spinner = (
-  { color = "border-gray-300", size = "md", loadingText, ...props },
+  { color = "border-gray-300", size = "md", loadingText, className, ...props },
   ref
 ) => {
   const SIZES = {
     sm: "w-3 h-3",
     md: "w-4 h-4",
     lg: "w-6 h-6",
+    custom: "",
   };
 
   return (
     <>
       <div
         className={`spin-container inline-block ${
-          !loadingText ? "relative" : "absolute"
-        } border-2 rounded-full mr-2 ${color} ${SIZES[size]}`}
+          loadingText ? "relative" : "absolute"
+        } border-2 rounded-full mr-2 ${color} ${SIZES[size]} ${className}`}
         ref={ref}
         {...props}
       >
