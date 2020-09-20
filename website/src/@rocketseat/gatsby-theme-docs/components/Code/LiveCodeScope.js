@@ -12,6 +12,7 @@ import {
   CookieButtons,
   ContactForm,
   CookieBanner,
+  useIntersect,
 } from "../../../../../../";
 import { css, jsx } from "@emotion/core";
 
@@ -30,4 +31,5 @@ export default {
   CookieButtons,
   ContactForm,
   CookieBanner,
+  useIntersect,
 };

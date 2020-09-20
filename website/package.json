@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-rocket-docs",
+  "name": "@bulbariss/ui",
   "private": true,
   "version": "1.0.0",
-  "description": "Out of the box Gatsby Starter for creating documentation websites easily and quickly. With support for MDX, code highlight, Analytics, SEO and more",
-  "author": "João Pedro Schmitz <oi@joaopedro.cc> (@joaopedro_cc)",
+  "description": "This is my take on React component libraries.",
+  "author": "bulbariss",
   "license": "MIT",
-  "starter-name": "gatsby-starter-rocket-docs",
+  "starter-name": "@bulbariss/ui",
   "dependencies": {
     "@bulbariss/ui": "^1.1.1",
     "@rocketseat/gatsby-theme-docs": "^2.2.3",

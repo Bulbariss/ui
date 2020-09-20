@@ -24,6 +24,7 @@ module.exports = {
     },
   },
   variants: {},
+  purge: false,
   experimental: {
     uniformColorPalette: true,
   },

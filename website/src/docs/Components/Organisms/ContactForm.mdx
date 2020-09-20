@@ -1,22 +1,47 @@
 ---
-title: Cookie Buttons
-description: Cookie Buttons.
+title: Contact Form
+description: Contact Form.
 ---
 
 ## Import
 
 ```js lineNumbers=true
-import { CookieButtons } from "@bulbariss/ui";
+import { ContactForm } from "@bulbariss/ui";
 ```
 
 ## Usage
 
 ```jsx lineNumbers=true live=true
-render(<div className="flex justify-center items-center">{/* <CookieButtons
-      custom="text-black hover:underline"
-      bannerProps={{ declineButton: { text: "Decline" } }}
-      firstButtonProps={{ href: "/privacy-policy" }}
-    /> */}</div>);
+function MyComponent() {
+  const colors = {
+    themeBgColor: "bg-indigo-600",
+    errorBgColor: "bg-red-500",
+    errorBorderColor: "border-red-500",
+    successBgColor: "bg-green-500",
+    loadingColor: "bg-blue-500",
+    btnHover: "bg-indigo-700",
+    inputColor: "bg-light",
+    inputFocusColor: "focus:border-indigo-600",
+    inputBorderColor: "border-light",
+  };
+
+  const buttonText = {
+    defaultText: "Отправить",
+    errorText: "Ошибка",
+    successText: "Отправлено",
+    loadingtext: "",
+  };
+
+  return (
+    <ContactForm
+      className="w-full max-w-md mx-auto"
+      buttonText={buttonText}
+      colors={colors}
+    />
+  );
+}
+
+render(<MyComponent />);
 ```
 
 | Name        | Type     | Default                                                                   | Description            |

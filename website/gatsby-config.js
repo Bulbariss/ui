@@ -1,26 +1,27 @@
+const path = require("path");
 module.exports = {
   siteMetadata: {
-    siteTitle: `test`,
-    defaultTitle: `Rocket Docs`,
-    siteTitleShort: `Rocket Docs`,
-    siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
-    siteUrl: `https://rocketdocs.netlify.com`,
-    siteAuthor: `@rocketseat`,
-    siteImage: `/banner.png`,
+    siteTitle: `UI`,
+    defaultTitle: `@bulbariss/ui`,
+    siteTitleShort: `@bulbariss/ui`,
+    siteDescription: `This is my take on React component libraries.`,
+    siteUrl: `https://bulbariss.github.io/ui/`,
+    siteAuthor: `@bulbariss`,
+    siteImage: `src/images/card.jpg`,
     siteLanguage: `en`,
-    themeColor: `#8257E6`,
+    themeColor: `#ECEFF4`,
     basePath: `/`,
   },
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Rocketseat Gatsby Themes`,
-        short_name: `RS Gatsby Themes`,
+        name: `@bulbariss/ui`,
+        short_name: `@bulbariss/ui`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#ECEFF4`,
         display: `standalone`,
-        icon: `static/favicon.png`,
+        icon: `src/images/icon.svg`,
       },
     },
     {
@@ -33,14 +34,7 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        tailwind: true,
-        whitelistPatterns: [/sym-\d?\d/g],
-        purgeOnly: [`src/css/style.css`],
-      },
-    },
+
     `gatsby-plugin-styled-jsx`,
     {
       resolve: `@rocketseat/gatsby-theme-docs`,
@@ -66,5 +60,17 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        whitelistPatterns: [/sym-\d?\d/g],
+        purgeOnly: [`src/css/style.css`],
+        content: [
+          path.join(process.cwd(), "src/**/!(*.d).{ts,js,jsx,tsx,md,mdx}"),
+          path.join(process.cwd(), "node_modules/@bulbariss/ui/lib/index.js"),
+        ],
+      },
+    },
   ],
 };

@@ -18,6 +18,10 @@
       link: "/Components/Atoms/Spinner"
     - label: "ThemeToggle"
       link: "/Components/Atoms/ThemeToggle"
+- label: "Utilities"
+  items:
+    - label: "Smart Outline"
+      link: "/Utilities/SmartOutline"
 
 - label: Community
   items:
