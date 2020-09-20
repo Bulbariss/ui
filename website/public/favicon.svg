@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Group 7</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-7">
+            <rect id="Rectangle" fill="#4C566A" x="0" y="0" width="512" height="512" rx="102.4"></rect>
+            <path d="M216.207304,359.221394 C267.613505,359.221394 302.315177,329.889036 302.315177,284.349307 L302.315177,153 L253.195905,153 L253.195905,280.073742 C253.195905,301.2527 238.181715,316.465753 216.207304,316.465753 C194.133462,316.465753 179.218703,301.2527 179.218703,280.073742 L179.218703,153 L130,153 L130,284.349307 C130,329.889036 164.403376,359.221394 216.207304,359.221394 Z M382.357908,356.636169 L382.357908,153 L333.139205,153 L333.139205,356.636169 L382.357908,356.636169 Z" id="UI" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

@@ -1,6 +1,11 @@
 /* purgecss start ignore */
 @tailwind base;
 @tailwind components;
+
+.example-wrapper {
+  @apply text-white py-6 flex flex-wrap justify-center items-center;
+}
+
 /* purgecss end ignore */
 @tailwind utilities;
 
@@ -13,29 +18,6 @@ html {
   -moz-osx-font-smoothing: greyscale;
   text-rendering: optimizeLegibility;
 }
-
-/* input {
-  vertical-align: middle;
-  line-height: normal;
-} */
-
-/* input::placeholder,
-textarea::placeholder {
-  color: #52606d;
-  color: #3C4859;
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: #52606d;
-  line-height: 1.5;
-}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #52606d;
-  line-height: 1.5;
-} */
 
 ::selection {
   background: #4c566a;
@@ -87,63 +69,9 @@ textarea::-webkit-input-placeholder {
     url("../fonts/Inter-Medium.woff") format("woff");
 }
 
-/* @font-face {
-  font-family: "iAWriterDuospace";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/iAWriterDuospace-Regular.eot") format("embedded-opentype"),
-    url("../fonts/iAWriterDuospace-Regular.woff2") format("woff2"),
-    url("../fonts/iAWriterDuospace-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "iAWriterDuospace";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/iAWriterDuospace-Bold.eot") format("embedded-opentype"),
-    url("../fonts/iAWriterDuospace-Bold.woff2") format("woff2"),
-    url("../fonts/iAWriterDuospace-Bold.woff") format("woff");
-} */
-
 /* Font Declaration */
 
 /* Classes */
-
-.btn-cc {
-  border-radius: 5px;
-  display: block;
-  padding: 0.5rem 0.9rem;
-  font-weight: 700;
-  border-style: solid;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.btn-lg {
-  padding: 0.625rem 1.5rem;
-}
-
-.active-nav {
-  border-bottom: 2px solid;
-}
-
-.link-animation:hover .active-nav {
-  border-bottom: 2px solid #ffffff;
-}
-
-.justify-self-center {
-  justify-self: center;
-}
-
-.padding-inline-start {
-  padding-inline-start: 30px;
-}
-
-.block-imp {
-  display: block !important;
-}
 
 .text-muted-black {
   color: #333333;
@@ -153,27 +81,9 @@ textarea::-webkit-input-placeholder {
   color: #414141;
 }
 
-.w-fit {
-  width: fit-content;
-}
-
-.h-fit {
-  height: fit-content;
-}
-
 .color-invert {
   filter: invert(1);
   mix-blend-mode: difference;
-}
-
-.btn-skeleton {
-  height: 38px;
-  padding: 0 30px;
-  text-align: center;
-  font-weight: 600;
-  white-space: nowrap;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 .bg-grey-nice {
@@ -209,22 +119,4 @@ textarea::-webkit-input-placeholder {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.max-w-80 {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 768px) {
-  .md\:h-14 {
-    height: 3.5rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .scroll-lock {
-    overflow: hidden;
-  }
 }

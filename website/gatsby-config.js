@@ -56,7 +56,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://rocketdocs.netlify.com`,
+        siteUrl: `https://bulbariss.github.io/ui/`,
       },
     },
     `gatsby-plugin-offline`,

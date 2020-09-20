@@ -11,12 +11,16 @@ import { CookieButtons } from "@bulbariss/ui";
 
 ## Usage
 
-```jsx lineNumbers=true live=true
-render(<div className="flex justify-center items-center">{/* <CookieButtons
+```jsx lineNumbers=true
+render(
+  <div className="example-wrapper">
+    <CookieButtons
       custom="text-black hover:underline"
       bannerProps={{ declineButton: { text: "Decline" } }}
       firstButtonProps={{ href: "/privacy-policy" }}
-    /> */}</div>);
+    />
+  </div>
+);
 ```
 
 | Name        | Type     | Default                                                                   | Description            |
